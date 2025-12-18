@@ -8,6 +8,7 @@ function App() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [flipped, setFlipped] = useState(false);
     const [viewMode, setViewMode] = useState('study'); // 'study' or 'grid'
+    const [toast, setToast] = useState({ visible: false, message: '', type: '' });
 
     // Progress tracking state: { cardId: 'correct' | 'incorrect' | 'unseen' }
     const [progressData, setProgressData] = useState(() => {
@@ -74,19 +75,26 @@ function App() {
         }));
     };
 
+    const showToast = (message, type = 'info') => {
+        setToast({ visible: true, message, type });
+        setTimeout(() => setToast(prev => ({ ...prev, visible: false })), 2000);
+    };
+
     const shuffleCards = () => {
         const shuffled = [...cards].sort(() => Math.random() - 0.5);
         setCards(shuffled);
         setCurrentIndex(0);
         setFlipped(false);
+        showToast('Deck Shuffled', 'shuffle');
     };
 
     const resetStudy = () => {
-        if (window.confirm('Reset all progress tracking?')) {
+        if (window.confirm('Reset all progress tracking and return to original order?')) {
             setProgressData({});
             setCurrentIndex(0);
             setFlipped(false);
             setCards(initialFlashcards);
+            showToast('Progress Reset', 'reset');
         }
     };
 
@@ -185,14 +193,19 @@ function App() {
 
                         <div className="utility-group">
                             <button className="util-btn" onClick={shuffleCards} title="Shuffle Deck">
-                                <Shuffle size={18} />
+                                <Shuffle size={16} />
                                 Shuffle
                             </button>
-                            <button className="util-btn" onClick={resetStudy} title="Reset All Progress">
-                                <RotateCcw size={18} />
+                            <button className="util-btn reset" onClick={resetStudy} title="Reset All Progress">
+                                <RotateCcw size={16} />
                                 Reset
                             </button>
                         </div>
+                    </div>
+
+                    <div className={`toast-container ${toast.visible ? 'visible' : ''} ${toast.type}`}>
+                        {toast.type === 'shuffle' ? <Shuffle size={16} /> : <RotateCcw size={16} />}
+                        {toast.message}
                     </div>
                 </main>
             ) : (
