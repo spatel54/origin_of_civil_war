@@ -198,5 +198,45 @@ export const flashcards = [
         where: "United States (Impacted North most).",
         result: "Denied the accused a jury trial and radicalized many Northerners.",
         why: "Led to high-profile resistance in cases like Anthony Burns, making slavery a local, unavoidable issue for the North."
+    },
+    {
+        id: 21,
+        term: "Westward Expansion & Sectional Conflict",
+        who: "United States Federal Government, Pro-slavery and Anti-slavery settlers.",
+        what: "The expansion of U.S. territory which acted as a catalyst for conflict by forcing legal decisions on slavery.",
+        when: "1840s-1850s.",
+        where: "Mexican Cession, Kansas, Nebraska territories.",
+        result: "Led to the Compromise of 1850, the Kansas-Nebraska Act, and 'Bleeding Kansas'.",
+        why: "Repeatedly forced the government to address the legal status of slavery, eventually breaking the Missouri Compromise barrier."
+    },
+    {
+        id: 22,
+        term: "Rise of the Republican Party (1850s)",
+        who: "Former Whigs, Know-Nothings, and Free-Soilers.",
+        what: "A political party formed in 1854 in reaction to the Kansas-Nebraska Act.",
+        when: "1854.",
+        where: "Northern United States.",
+        result: "United Northern sentiments under 'Free Soil' and opposed 'Slave Power' aggression.",
+        why: "Grew by appealing to those wanting to stop the spread of slavery and those reacting to Southern violence (e.g., the beating of Charles Sumner)."
+    },
+    {
+        id: 23,
+        term: "Violence in Congress (Joanne Freeman)",
+        who: "Congressmen (e.g., 'Fighting Republicans' vs. Southern representatives).",
+        what: "The disintegration of congressional 'fraternity' and the rise of physical intimidation in legislative chambers.",
+        when: "Pre-Civil War 1850s.",
+        where: "U.S. Capitol, Washington D.C.",
+        result: "Weaponization of the floor (pistols/knives) and segregation of social groups ('messes').",
+        why: "Brought the violence of the territories onto the Senate floor, signaling the breakdown of democratic political solutions."
+    },
+    {
+        id: 24,
+        term: "Turning Points toward Collapse (1861)",
+        who: "Abraham Lincoln, John Brown, Stephen Douglas.",
+        what: "Key events contributing to the collapse of the Union.",
+        when: "1854-1861.",
+        where: "Kansas, Harper's Ferry, Washington D.C.",
+        result: "The Kansas-Nebraska Act, John Brown's Raid, and the Election of 1860.",
+        why: "These events destroyed political parties, psychological trust, and the Southern sense of power within the Union."
     }
 ];
